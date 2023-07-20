@@ -2377,14 +2377,7 @@ static int nvpproxy_status_hook(int eid, webs_t wp, int argc, char **argv)
 }
 #endif
 
-#if defined (APP_SHADOWSOCKS)
-static int dns2tcp_status_hook(int eid, webs_t wp, int argc, char **argv)
-{
-	int dns2tcp_status_code = pids("dns2tcp");
-	websWrite(wp, "function dns2tcp_status() { return %d;}\n", dns2tcp_status_code);
-	return 0;
-}
-#endif
+
 
 #if defined (APP_ALDRIVER)
 static int aliyundrive_status_hook(int eid, webs_t wp, int argc, char **argv)
